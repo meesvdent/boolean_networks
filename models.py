@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Network:
+class BoolNet:
 
     def __init__(self, nodes=list(), connections=list(), init_state=np.array([])):
         self.nodes = self.create_node_dict(nodes)
@@ -11,7 +11,11 @@ class Network:
         self.state = np.array(init_state, dtype=int)
 
     def __str__(self):
-        return str(self.connections)
+        return f'Nodes:\n ' \
+               f'{self.nodes} \n' \
+               f'\n' \
+               f'Connections: \n' \
+               f'{self.connections}'
 
     def create_node_dict(self, nodes):
         node_dict = {}
